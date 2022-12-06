@@ -5,7 +5,8 @@ class BooksController < ApplicationController
   end
   def create
     book = Book.new(book_params)
-    redirect_to '/'
+    book.save
+    redirect_to '/books/:id'
   end
   def show
     @book = Book.find(params[:id])
